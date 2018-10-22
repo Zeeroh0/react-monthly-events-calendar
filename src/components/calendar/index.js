@@ -95,7 +95,7 @@ class Calendar extends React.Component {
       days = [];
     }
 
-    return <div className="body">{rows}</div>;
+    return <div className="calendar-body">{rows}</div>;
   }
 
   onDateClick = day => {
