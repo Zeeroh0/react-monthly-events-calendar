@@ -127,4 +127,8 @@ class Calendar extends React.Component {
   }
 };
 
+Calendar.defaultProps = {
+  events: [],
+};
+
 export default Calendar;

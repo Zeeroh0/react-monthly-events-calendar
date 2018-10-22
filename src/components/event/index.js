@@ -6,7 +6,7 @@ const Event = ({ title, date, onClick, className='', style={} }) => {
   return (
     <div
       className={`${className} event`}
-      style={{ textDecoration:'italic', ...style }}
+      style={{ textDecoration: 'italic', ...style }}
       onClick={onClick}
     >
       <div className="title">{title}</div>
