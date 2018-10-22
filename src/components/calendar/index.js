@@ -95,7 +95,7 @@ class Calendar extends React.Component {
       days = [];
     }
 
-    return <div className="body">{rows}</div>;
+    return <div className="calendar-body">{rows}</div>;
   }
 
   onDateClick = day => {
@@ -125,6 +125,10 @@ class Calendar extends React.Component {
       </div>
     );
   }
+};
+
+Calendar.defaultProps = {
+  events: [],
 };
 
 export default Calendar;

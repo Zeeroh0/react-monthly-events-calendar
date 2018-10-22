@@ -32,7 +32,13 @@
     box-sizing: border-box;
   }
 
-  body {
+  .calendar-wrapper {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5em;
+    max-width: 50em;
+
+    // body styling
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 1em;
     font-weight: 300;
@@ -40,13 +46,6 @@
     color: $text-color;
     background: $bg-color;
     position: relative;
-  }
-
-  .calendar-wrapper {
-    display: block;
-    margin: 0 auto;
-    margin-top: 5em;
-    max-width: 50em;
   }
 
 /* */
