@@ -121,7 +121,8 @@
 
     .selected {
       border-left: 10px solid transparent;
-      border-image: linear-gradient(45deg, $primary-color 0%,$tertiary-color 40%);
+      // border-image: linear-gradient(45deg, $primary-color 0%,$tertiary-color 40%);
+      border-color: $primary-color;
       border-image-slice: 1;
 
       .bg {
