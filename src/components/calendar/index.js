@@ -70,9 +70,17 @@ class Calendar extends React.Component {
           : "";
         
         const eventComponents = this.props.events.map(
-          (e, i) => dateFns.isEqual(cloneDay, e.date) ? <Event key={i} title={e.title} date={e.title} onClick={e.onClick} style={e.style} /> : null
+          (e, i) => dateFns.isEqual(cloneDay, e.date) ?
+            <Event
+              key={i}
+              title={e.title}
+              date={e.title}
+              onClick={e.onClick}
+              className={e.className}
+              style={e.style}
+            />
+            : null
         );
-        // debugger
 
         days.push(
           <div

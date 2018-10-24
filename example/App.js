@@ -3,6 +3,7 @@ import dateFns from "date-fns";
 
 import { Calendar } from "../src/components";
 import "../src/styles.scss";
+import './example.scss';
 
 import data from './dummydata';
 
