@@ -83,10 +83,9 @@ class Calendar extends React.Component {
         );
 
         days.push(
-          <div className="col cell-wrapper">
+          <div className="col cell-wrapper" key={day} >
             <div
               className={`cell ${cellAdditionalClass}`}
-              key={day}
               onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
             >
               <span className="number">{formattedDate}</span>
