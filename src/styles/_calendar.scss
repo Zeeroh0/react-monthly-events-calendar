@@ -45,90 +45,100 @@
 
   .calendar-body {
 
-    .cell {
+    .cell-wrapper {
       position: relative;
-      height: 5em;
-      border-right: 1px solid $border-color;
-      overflow: hidden;
-      cursor: pointer;
-      background: $neutral-color;
-      transition: 0.25s ease-out;
-
+      width: 100%;
+      padding-top: 15%;
+  
       &:last-child {
         border-right: none;
       }
-      &:hover {
-        background: $bg-color;
-        transition: 0.5s ease-out;
-      }
 
-      .number {
+      .cell {
         position: absolute;
-        font-size: 82.5%;
-        line-height: 1;
-        top: .75em;
-        right: .75em;
-        font-weight: 700;
-      }
-
-      .bg {
-        font-weight: 700;
-        line-height: 1;
-        color: $primary-color;
-        opacity: 0;
-        font-size: 8em;
-        position: absolute;
-        top: -.2em;
-        right: -.05em;
-        transition: .25s ease-out;
-        letter-spacing: -.07em;
-      }
-
-      &:hover .bg {
-        opacity: 0.05;
-        transition: .5s ease-in;
-      }
-
-      .events {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% - 1em);
-        position: absolute;
-        top: 1.5em;
-        height: calc(100% - 1.8em);
-        margin-left: .3em;
-
-        .event {
-          background-color: $secondary-color;
-          border-radius: 5px;
-          width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-right: 1px solid $border-color;
+        overflow: hidden;
+        cursor: pointer;
+        background: $neutral-color;
+        transition: 0.25s ease-out;
+        &:hover {
+          background: $bg-color;
+          transition: 0.5s ease-out;
+        }
+  
+        .number {
+          position: absolute;
+          font-size: 82.5%;
           line-height: 1;
-          margin-bottom: .2em;
-          padding: .2em;
-
-          &:hover {
-            transform: scale(1.10);
-            transition: .25s ease-out;
-          }
-
-          .title {
-            font-size: 70%;
-            color: white;
+          top: .75em;
+          right: .75em;
+          font-weight: 700;
+        }
+  
+        .bg {
+          font-weight: 700;
+          line-height: 1;
+          color: $primary-color;
+          opacity: 0;
+          font-size: 8em;
+          position: absolute;
+          top: -.2em;
+          right: -.05em;
+          transition: .25s ease-out;
+          letter-spacing: -.07em;
+        }
+  
+        &:hover .bg {
+          opacity: 0.05;
+          transition: .5s ease-in;
+        }
+  
+        .events {
+          display: flex;
+          flex-direction: column;
+          width: calc(100% - 1em);
+          position: absolute;
+          top: 1.5em;
+          height: calc(100% - 1.8em);
+          margin-left: .3em;
+  
+          .event {
+            background-color: $secondary-color;
+            border-radius: 5px;
+            width: 100%;
+            line-height: 1;
+            margin-bottom: .2em;
+            padding: .2em;
+  
+            &:hover {
+              transform: scale(1.10);
+              transition: .25s ease-out;
+            }
+  
+            .title {
+              font-size: 70%;
+              color: white;
+            }
           }
         }
       }
-    }
 
-    .selected {
-      border-left: 10px solid transparent;
-      // border-image: linear-gradient(45deg, $primary-color 0%,$tertiary-color 40%);
-      border-color: $primary-color;
-      border-image-slice: 1;
-
-      .bg {
-        opacity: 0.05;
-        transition: .5s ease-in;
+      .selected {
+        border-left: 10px solid transparent;
+        // border-image: linear-gradient(45deg, $primary-color 0%,$tertiary-color 40%);
+        border-color: $primary-color;
+        border-image-slice: 1;
+  
+        .bg {
+          opacity: 0.05;
+          transition: .5s ease-in;
+        }
       }
+
     }
 
     .row{
