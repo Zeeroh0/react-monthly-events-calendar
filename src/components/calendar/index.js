@@ -61,8 +61,6 @@ class Calendar extends React.Component {
     let day = startDate;
     let formattedDate = "";
 
-    debugger;
-
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
@@ -72,11 +70,7 @@ class Calendar extends React.Component {
           : "";
 
         const eventComponents = this.props.events.map(
-          (e, i) => {
-            const date1 = dateFns.format(cloneDay, 'DDMMYYYY');
-            const date2 = dateFns.format(e.date, 'DDMMYYYY');
-            const x = dateFns.isEqual(date1, date2);
-            return x ?
+          (e, i) => dateFns.isEqual(dateFns.format(cloneDay, 'DDMMYYYY'), dateFns.format(e.date, 'DDMMYYYY')) ?
             <Event
               key={i}
               title={e.title}
@@ -86,7 +80,6 @@ class Calendar extends React.Component {
               style={e.style}
             />
             : null
-          }
         );
 
         days.push(
