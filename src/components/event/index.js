@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Event = ({ title, date, onClick, className='', style={} }) => {
-  if (title == 'Damonte Ranch') debugger;
+
   return (
     <div
       className={`${className} event`}

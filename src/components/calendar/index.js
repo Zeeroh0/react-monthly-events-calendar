@@ -61,6 +61,8 @@ class Calendar extends React.Component {
     let day = startDate;
     let formattedDate = "";
 
+    debugger;
+
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
