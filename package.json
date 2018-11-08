@@ -1,6 +1,6 @@
 {
   "name": "react-monthly-events-calendar",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simple month view calendar that shows events on it",
   "main": "dist/index.js",
   "directories": {
