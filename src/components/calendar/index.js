@@ -74,7 +74,7 @@ class Calendar extends React.Component {
             <Event
               key={i}
               title={e.title}
-              date={e.title}
+              date={e.date}
               onClick={e.onClick}
               className={e.className}
               style={e.style}

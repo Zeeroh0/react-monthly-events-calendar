@@ -156,11 +156,11 @@
     }
 
     .disabled {
-      color: $text-color-light;
+      // color: $text-color-light;
       pointer-events: none;
 
       .event .title {
-        color: $text-color-light !important;
+        // color: $text-color-light !important;
       }
     }
   }
