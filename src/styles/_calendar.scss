@@ -109,10 +109,11 @@
           .event {
             background-color: $secondary-color;
             border-radius: 5px;
-            width: 100%;
+            width: 90%;
             line-height: 1;
             margin-bottom: .2em;
-            padding: .2em;
+            padding: .3em .2em;
+            margin-left: 5%;
   
             &:hover {
               transform: scale(1.10);
@@ -120,7 +121,7 @@
             }
   
             .title {
-              font-size: 70%;
+              font-size: 90%;
               color: white;
             }
           }
