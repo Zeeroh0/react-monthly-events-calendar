@@ -39,7 +39,7 @@
   "scripts": {
     "build": "webpack",
     "serve": "live-server public/",
-    "dev": "webpack-dev-server --inline --hot",
+    "start": "webpack-dev-server --inline --hot",
     "transpile": "babel src -d dist --copy-files",
     "prepublishOnly": "npm run transpile"
   },

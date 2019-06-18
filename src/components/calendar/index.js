@@ -6,8 +6,15 @@ import Event from '../event';
 
 class Calendar extends React.Component {
   state = {
-    currentMonth: new Date(),
-    selectedDate: new Date()
+    currentMonth: null,
+    selectedDate: null
+  };
+
+  componentDidMount() {
+    this.setState({ 
+      selectedDate: this.props.initialSelectedDate || new Date(), 
+      currentMonth: this.props.initialSelectedDate || new Date()
+    })
   };
 
   renderHeader = () => {
@@ -23,8 +30,10 @@ class Calendar extends React.Component {
         <div className="col col-center">
           <span>{dateFns.format(this.state.currentMonth, dateFormat)}</span>
         </div>
-        <div className="col col-end" onClick={this.nextMonth}>
-          <div className="icon">chevron_right</div>
+        <div className="col col-end">
+          <div className="icon" onClick={this.nextMonth}>
+            chevron_right
+          </div>
         </div>
       </div>
     );
@@ -49,8 +58,8 @@ class Calendar extends React.Component {
 
   renderCells = () => {
     const { currentMonth, selectedDate } = this.state;
-    const monthStart = dateFns.startOfMonth(currentMonth);    // Gets month's last day
-    const monthEnd = dateFns.endOfMonth(monthStart);          // Gets month's first day
+    const monthStart = dateFns.startOfMonth(currentMonth);    // Gets month's first day
+    const monthEnd = dateFns.endOfMonth(monthStart);          // Gets month's last day
     const startDate = dateFns.startOfWeek(monthStart);        // Gets the month's first week's first day
     const endDate = dateFns.endOfWeek(monthEnd);              // Gets the month's first week's last day
 
@@ -127,11 +136,21 @@ class Calendar extends React.Component {
   }
 
   render() {
+    const { initialSelectedDate } = this.props
+    const { currentMonth, selectedDate } = this.state
+
+    // logic to filter the rendered events to this month only +/- 7 days
+    const currentMonthMinus7 = dateFns.subDays(dateFns.startOfMonth(currentMonth), 7); 
+    const currentMonthPlus7 = dateFns.addDays(dateFns.endOfMonth(currentMonth), 7);
+    console.log('least: ' + currentMonthMinus7)
+    console.log('most: ' + currentMonthPlus7)
+    const filteredEvents = this.props.events;
+
     return (
       <div className="calendar">
         {this.renderHeader()}
         {this.renderDays()}
-        {this.renderCells()}
+        {this.renderCells(filteredEvents)}
       </div>
     );
   }

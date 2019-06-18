@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='calendar-wrapper'>
-        <Calendar events={styledEvents} />
+        <Calendar events={styledEvents} initialSelectedDate={'12/7/19'}/>
       </div>
     );
   }
