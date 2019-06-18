@@ -11,9 +11,21 @@ class Calendar extends React.Component {
   };
 
   componentDidMount() {
+    const { initialSelectedDate } = this.props;
+    const isItNotThere = !initialSelectedDate;
+    const newSelectedDate = new Date(initialSelectedDate);
+    
+    let dateForState;
+    if (isItNotThere || newSelectedDate == 'Invalid Date') {
+      dateForState = new Date();
+    }
+    else {
+      dateForState = newSelectedDate;
+    };
+
     this.setState({ 
-      selectedDate: this.props.initialSelectedDate || new Date(), 
-      currentMonth: this.props.initialSelectedDate || new Date()
+      selectedDate: dateForState,
+      currentMonth: dateForState
     })
   };
 
@@ -56,7 +68,7 @@ class Calendar extends React.Component {
     return <div className="days row">{days}</div>;
   }
 
-  renderCells = () => {
+  renderCells = (filteredEvents) => {
     const { currentMonth, selectedDate } = this.state;
     const monthStart = dateFns.startOfMonth(currentMonth);    // Gets month's first day
     const monthEnd = dateFns.endOfMonth(monthStart);          // Gets month's last day
@@ -78,7 +90,7 @@ class Calendar extends React.Component {
           : dateFns.isSameDay(day, selectedDate) ? "selected"
           : "";
         
-        const eventComponents = this.props.events.map(
+        const eventComponents = filteredEvents.map(
           (e, i) => dateFns.isEqual(cloneDay, e.date) ?
             <Event
               key={i}
@@ -136,15 +148,12 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { initialSelectedDate } = this.props
-    const { currentMonth, selectedDate } = this.state
+    const { currentMonth } = this.state
 
     // logic to filter the rendered events to this month only +/- 7 days
     const currentMonthMinus7 = dateFns.subDays(dateFns.startOfMonth(currentMonth), 7); 
     const currentMonthPlus7 = dateFns.addDays(dateFns.endOfMonth(currentMonth), 7);
-    console.log('least: ' + currentMonthMinus7)
-    console.log('most: ' + currentMonthPlus7)
-    const filteredEvents = this.props.events;
+    const filteredEvents = this.props.events.filter(event => new Date(event.date) >= currentMonthMinus7 && new Date(event.date) <= currentMonthPlus7);
 
     return (
       <div className="calendar">
