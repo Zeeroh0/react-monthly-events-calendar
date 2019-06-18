@@ -150,7 +150,7 @@ class Calendar extends React.Component {
   render() {
     const { currentMonth } = this.state
 
-    // logic to filter the rendered events to this month only +/- 7 days
+    // logic to filter the rendered events to this month +/- 7 days worth of events
     const currentMonthMinus7 = dateFns.subDays(dateFns.startOfMonth(currentMonth), 7); 
     const currentMonthPlus7 = dateFns.addDays(dateFns.endOfMonth(currentMonth), 7);
     const filteredEvents = this.props.events.filter(event => new Date(event.date) >= currentMonthMinus7 && new Date(event.date) <= currentMonthPlus7);
