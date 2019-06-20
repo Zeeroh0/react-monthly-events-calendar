@@ -11,3 +11,16 @@
   $neutral-color: #fff !default;
 
 /* */
+
+/* UTILITY */
+
+  // Set text color based off the background lightness
+  @function set-text-color($color) {
+    @if (lightness($color) > 40) {
+      @return $dark-text;
+    } @else {
+      @return $light-text;
+    }
+  }
+
+/* */

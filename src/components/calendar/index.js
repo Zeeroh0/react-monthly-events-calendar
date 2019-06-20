@@ -89,13 +89,13 @@ class Calendar extends React.Component {
         const cellAdditionalClass = !dateFns.isSameMonth(day, monthStart) ? "disabled"
           : dateFns.isSameDay(day, selectedDate) ? "selected"
           : "";
-        
-        const eventComponents = filteredEvents.map(
-          (e, i) => dateFns.isEqual(cloneDay, e.date) ?
+
+        const eventComponents = this.props.events.map(
+          (e, i) => dateFns.isEqual(dateFns.format(cloneDay, 'DDMMYYYY'), dateFns.format(e.date, 'DDMMYYYY')) ?
             <Event
               key={i}
               title={e.title}
-              date={e.title}
+              date={e.date}
               onClick={e.onClick}
               className={e.className}
               style={e.style}
@@ -104,10 +104,9 @@ class Calendar extends React.Component {
         );
 
         days.push(
-          <div className="col cell-wrapper">
+          <div className="col cell-wrapper" key={day} >
             <div
               className={`cell ${cellAdditionalClass}`}
-              key={day}
               onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
             >
               <span className="number">{formattedDate}</span>

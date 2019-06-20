@@ -7,7 +7,7 @@ export default [
   { title: 'Event 4', date: '2019-06-31T00:00:00', subtitle: 'Subtitle 4', dimIcType: '2' },
   { title: 'Event 5', date: '2019-06-31T00:00:00', subtitle: 'Subtitle 5', dimIcType: '3' },
   { title: 'Event 6', date: '2019-07-03T00:00:00', subtitle: 'Subtitle 6', dimIcType: '1' },
-  { title: 'Event 6', date: '2019-07-02T00:00:00', subtitle: 'Subtitle 6', dimIcType: '4' },
-  { title: 'Event 6', date: '2019-06-30T00:00:00', subtitle: 'Subtitle 6', dimIcType: '4' },
-  { title: 'Event 6', date: '2019-08-02T00:00:00', subtitle: 'Subtitle 6', dimIcType: '4' },
+  { title: 'Event 7', date: '2019-07-02T00:00:00', subtitle: 'Subtitle 6', dimIcType: '4' },
+  { title: 'Event 8', date: '2019-06-30T00:00:00', subtitle: 'Subtitle 6', dimIcType: '4' },
+  { title: 'Event 9', date: '2019-08-02T00:00:00', subtitle: 'Subtitle 6', dimIcType: '4' },
 ];
