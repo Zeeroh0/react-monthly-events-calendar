@@ -48,7 +48,7 @@
     .cell-wrapper {
       position: relative;
       width: 100%;
-      padding-top: 15%;
+      padding-top: 10%;
   
       &:last-child {
         border-right: none;
@@ -109,10 +109,11 @@
           .event {
             background-color: $secondary-color;
             border-radius: 5px;
-            width: 100%;
+            width: 90%;
             line-height: 1;
             margin-bottom: .2em;
-            padding: .2em;
+            padding: .3em .2em;
+            margin-left: 5%;
   
             &:hover {
               transform: scale(1.10);
@@ -120,7 +121,7 @@
             }
   
             .title {
-              font-size: 70%;
+              font-size: 90%;
               color: white;
             }
           }
@@ -156,11 +157,11 @@
     }
 
     .disabled {
-      color: $text-color-light;
+      // color: $text-color-light;
       pointer-events: none;
 
       .event .title {
-        color: $text-color-light !important;
+        // color: $text-color-light !important;
       }
     }
   }
