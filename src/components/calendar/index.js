@@ -12,7 +12,8 @@ class Calendar extends React.Component {
 
   componentDidMount() {
     // On mount, if the initialSelectedDate prop is provided and yields a propper Date instance,
-    // set that to the state as the selectedDate and currentMonth.const { initialSelectedDate } = this.props;
+    // set that to the state as the selectedDate and currentMonth.
+    const { initialSelectedDate } = this.props;
     const isItNotThere = !initialSelectedDate;
     const newSelectedDate = new Date(initialSelectedDate);
     
