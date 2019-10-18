@@ -31,7 +31,7 @@ class Calendar extends React.Component {
     return (
       <div className="header row flex-middle">
         <div className="col col-start">
-          <div className="icon" onClick={this.prevMonth}>
+          <div className="k-cal-icon" onClick={this.prevMonth}>
             chevron_left
           </div>
         </div>
@@ -39,7 +39,7 @@ class Calendar extends React.Component {
           <span>{dateFns.format(this.state.currentMonth, dateFormat)}</span>
         </div>
         <div className="col col-end">
-          <div className="icon" onClick={this.nextMonth}>
+          <div className="k-cal-icon" onClick={this.nextMonth}>
             chevron_right
           </div>
         </div>
