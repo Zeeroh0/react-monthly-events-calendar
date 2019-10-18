@@ -3,137 +3,131 @@
 /* CALENDAR */
 
 .calendar {
+  background: $neutral-color;
+  border: 1px solid $border-color;
   display: block;
   position: relative;
   width: 100%;
-  background: $neutral-color;
-  border: 1px solid $border-color;
 
   .header {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 115%;
-    padding: 1.5em 0;
     border-bottom: 1px solid $border-color;
+    font-size: 115%;
+    font-weight: 700;
+    padding: 1.5em 0;
+    text-transform: uppercase;
 
     .icon {
       cursor: pointer;
       transition: .15s ease-out;
 
       &:hover {
+        color: $primary-color;
         transform: scale(1.75);
         transition: .25s ease-out;
-        color: $primary-color;
       }
-      &:first-of-type {
-        margin-left: 1em;
-      }
-      &:last-of-type {
-        margin-right: 1em;
-      }
+      &:first-of-type { margin-left: 1em; }
+      &:last-of-type { margin-right: 1em; }
     }
   }
 
   .days {
-    text-transform: uppercase;
-    font-weight: 400;
+    border-bottom: 1px solid $border-color;
     color: $text-color-light;
     font-size: 70%;
+    font-weight: 400;
     padding: .75em 0;
-    border-bottom: 1px solid $border-color;
+    text-transform: uppercase;
   }
 
   .calendar-body {
 
     .cell-wrapper {
+      padding-top: 10%;
       position: relative;
       width: 100%;
-      padding-top: 10%;
-  
-      &:last-child {
-        border-right: none;
-      }
+
+      &:last-child { border-right: none; }
 
       .cell {
+        background: $neutral-color;
+        border-right: 1px solid $border-color;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.25s ease-out;
         position: absolute;
         top: 0;
-        left: 0;
-        bottom: 0;
         right: 0;
-        border-right: 1px solid $border-color;
-        overflow: hidden;
-        cursor: pointer;
-        background: $neutral-color;
-        transition: 0.25s ease-out;
+        bottom: 0;
+        left: 0;
+
         &:hover {
           background: $bg-color;
           transition: 0.5s ease-out;
         }
-  
+
         .number {
-          position: absolute;
           font-size: 82.5%;
+          font-weight: 700;
           line-height: 1;
+          position: absolute;
           top: .75em;
           right: .75em;
-          font-weight: 700;
         }
-  
+
         .bg {
-          font-weight: 700;
-          line-height: 1;
           color: $primary-color;
-          opacity: 0;
           font-size: 8em;
+          font-weight: 700;
+          letter-spacing: -.07em;
+          line-height: 1;
+          opacity: 0;
+          transition: .25s ease-out;
           position: absolute;
           top: -.2em;
           right: -.05em;
-          transition: .25s ease-out;
-          letter-spacing: -.07em;
         }
-  
+
         &:hover .bg {
           opacity: 0.05;
           transition: .5s ease-in;
         }
-  
+
         .events {
           display: flex;
           flex-direction: column;
+          height: calc(100% - 1.8em);
+          margin-left: .3em;
           width: calc(100% - 1em);
           position: absolute;
           top: 1.5em;
-          height: calc(100% - 1.8em);
-          margin-left: .3em;
-  
+
           .event {
             background-color: $secondary-color;
             border-radius: 5px;
-            width: 90%;
             line-height: 1;
             margin-bottom: .2em;
-            padding: .3em .2em;
             margin-left: 5%;
-  
+            padding: .3em .2em;
+            width: 90%;
+
             &:hover {
               transform: scale(1.10);
               transition: .25s ease-out;
             }
-  
+
             .title {
-              font-size: 90%;
               color: white;
+              font-size: 90%;
             }
           }
         }
       }
 
       .selected {
-        border-left: 10px solid transparent;
-        // border-image: linear-gradient(45deg, $primary-color 0%,$tertiary-color 40%);
         border-color: $primary-color;
         border-image-slice: 1;
-  
+        border-left: 10px solid transparent;
+
         .bg {
           opacity: 0.05;
           transition: .5s ease-in;
@@ -145,9 +139,7 @@
     .row{
       border-bottom: 1px solid $border-color;
 
-      &:last-child {
-        border-bottom: none;
-      }
+      &:last-child { border-bottom: none; }
     }
 
     .col {
@@ -156,14 +148,7 @@
       width: calc(100%/7);
     }
 
-    .disabled {
-      // color: $text-color-light;
-      pointer-events: none;
-
-      .event .title {
-        // color: $text-color-light !important;
-      }
-    }
+    .disabled { pointer-events: none; }
   }
 }
 

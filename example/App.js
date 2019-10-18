@@ -35,7 +35,7 @@ const styledEvents = data.map(
 class App extends React.Component {
   render() {
     return (
-      <div className='calendar-wrapper'>
+      <div className='k-calendar-wrapper'>
         <Calendar events={styledEvents} initialSelectedDate={'6/18/19'}/>
       </div>
     );
